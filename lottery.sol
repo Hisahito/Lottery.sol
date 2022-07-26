@@ -10,8 +10,8 @@ contract Lottery{
         minFee = _minFee;
     }
 
-    function play() public{
-        require(msg.value >= minFee);
+    function play() public payable{
+        require(msg.value >= minFee, "porfavor paga mas");
         players.push(msg.sender);
     }
 } 
